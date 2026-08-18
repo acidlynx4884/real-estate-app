@@ -1,0 +1,22 @@
+{
+  "name": "@my-app/shared",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "devDependencies": {
+    "@my-app/config": "workspace:*",
+    "eslint": "^10.8.1",
+    "typescript": "~6.0.2"
+  }
+}

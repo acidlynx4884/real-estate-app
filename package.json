@@ -2,34 +2,24 @@
   "name": "my-app",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "packageManager": "pnpm@11.18.0",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "dev": "turbo run dev",
+    "dev:client": "turbo run dev --filter=@my-app/client",
+    "dev:server": "turbo run dev --filter=@my-app/server",
+    "build": "turbo run build",
+    "build:client": "turbo run build --filter=@my-app/client",
+    "build:server": "turbo run build --filter=@my-app/server",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "test": "turbo run test",
+    "test:e2e": "turbo run test:e2e",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "preview": "turbo run preview"
   },
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "@types/node": "^24.13.3",
-    "@types/react": "^19.2.17",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.4",
-    "eslint": "^10.8.1",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.4",
-    "globals": "^17.11.0",
     "prettier": "^3.9.6",
-    "typescript": "~6.0.2",
-    "typescript-eslint": "^8.67.0",
-    "vite": "^8.2.0"
+    "turbo": "latest"
   }
 }
